@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.sds</groupId>
+  <artifactId>osdr-services</artifactId>
+  <version>0.13</version>
+  <packaging>pom</packaging>
+  <name>osdr-services</name>
+
+  <modules>
+    <module>storage</module>
+    <module>validation</module>
+    <module>java-service-template</module>
+    <module>messaging</module>
+    <module>jtransitlight</module>
+    <module>office-file-converter</module>
+  </modules>
+
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <nexus.release.url>http://nexus.your-company.com/repository/maven-releases</nexus.release.url>
+    <nexus.snapshots.url>http://nexus.your-company.com/repository/maven-snapshots</nexus.snapshots.url>
+  </properties>
+
+  <distributionManagement>
+      <repository>
+          <id>nexus</id>
+          <url>${nexus.release.url}</url>
+      </repository>
+      <snapshotRepository>
+          <uniqueVersion>false</uniqueVersion>
+          <id>nexus</id>
+          <url>${nexus.snapshots.url}</url>
+      </snapshotRepository>
+  </distributionManagement>
+
+  <repositories>
+    <repository>
+      <id>nexus</id>
+      <url>${nexus.release.url}</url>
+    </repository>
+  </repositories>
+
+</project>

@@ -1,0 +1,43 @@
+{
+
+  "messageId": "281a0000-1e0a-5427-13c0-08d51474e577",
+
+  "correlationId": "281a0000-1e0a-5427-7011-08d51474e4cc",
+
+  "conversationId": "281a0000-1e0a-5427-98ca-08d51474e547",
+
+  "initiatorId": "281a0000-1e0a-5427-7011-08d51474e4cc",
+
+  "sourceAddress": "rabbitmq://localhost/osdr_dev/Sds.Osdr.Domain.BackEnd.Sagas.Substances.SubstanceProcessingStateMachine",
+
+  "destinationAddress": "rabbitmq://localhost/osdr_dev/Sds.Imaging.Domain.Commands:GenerateImage",
+
+  "messageType": [
+
+    "urn:message:Sds.Imaging.Domain.Commands:GenerateImage"
+
+  ],
+
+  "headers": {},
+
+  "host": {
+
+    "machineName": "NB",
+
+    "processName": "dotnet",
+
+    "processId": 20436,
+
+    "assembly": "Sds.Osdr.Domain.BackEnd",
+
+    "assemblyVersion": "1.0.0.0",
+
+    "frameworkVersion": ".NET Core 4.6.25211.01",
+
+    "massTransitVersion": "4.0.0.1278",
+
+    "operatingSystemVersion": "Microsoft Windows 6.1.7601 S"
+
+  }
+
+}

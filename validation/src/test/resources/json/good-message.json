@@ -1,0 +1,26 @@
+{
+
+    "id": "281a0000-1e0a-5427-7011-08d51474e4cc",
+
+    "userId": "ff83054a-7850-421f-9f07-06f7c97b62f8",
+
+    "blobId": "932b5b8d-2c01-4afb-9d7a-d22d9076486c",
+
+    "bucket": "ff83054a-7850-421f-9f07-06f7c97b62f8",
+
+    "image": {
+
+      "id": "281a0000-1e0a-5427-401a-08d51474e558",
+
+      "width": 200,
+
+      "height": 200,
+
+      "format": "SVG",
+
+      "mimeType": "image/svg+xml"
+
+    },
+
+    "correlationId": "281a0000-1e0a-5427-7011-08d51474e4cc"
+}
