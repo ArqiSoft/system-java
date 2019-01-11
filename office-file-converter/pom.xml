@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.sds</groupId>
-    <artifactId>osdr-services</artifactId>
-    <version>0.13</version>
+    <groupId>com.github.arqisoft</groupId>
+    <artifactId>leanda-services</artifactId>
+    <version>0.14</version>
   </parent>
 
-    <groupId>com.sds</groupId>
+    <groupId>com.github.arqisoft</groupId>
     <artifactId>office-file-converter</artifactId>
     <version>0.14</version>
 
@@ -95,7 +95,7 @@
         </repository>
         <repository>
             <id>nexus</id>
-            <url>${nexus.release.url}</url>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
         </repository>
     </repositories>
 

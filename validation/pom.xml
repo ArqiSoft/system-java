@@ -4,14 +4,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.sds</groupId>
-    <artifactId>osdr-services</artifactId>
-    <version>0.13</version>
+    <groupId>com.github.arqisoft</groupId>
+    <artifactId>leanda-services</artifactId>
+    <version>0.14</version>
   </parent>
 
-  <groupId>com.sds</groupId>
+  <groupId>com.github.arqisoft</groupId>
   <artifactId>json-schema-validator</artifactId>
-  <version>0.13</version>
+  <version>0.14</version>
   <name>json schema validator</name>
   <url>http://maven.apache.org</url>
 

@@ -2,14 +2,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.sds</groupId>
-        <artifactId>osdr-services</artifactId>
-        <version>0.13</version>
+        <groupId>com.github.arqisoft</groupId>
+        <artifactId>leanda-services</artifactId>
+        <version>0.14</version>
     </parent>
-    <groupId>sds</groupId>
+    
+    <groupId>com.github.arqisoft</groupId>
     <artifactId>messaging</artifactId>
     <version>1.1</version>
     <packaging>jar</packaging>
+
     <dependencies>
         <dependency>
             <groupId>com.npspot</groupId>
@@ -29,9 +31,51 @@
             <type>jar</type>
         </dependency>
         <dependency>
-            <groupId>com.sds</groupId>
+            <groupId>com.github.arqisoft</groupId>
             <artifactId>json-schema-validator</artifactId>
-            <version>0.13</version>
+            <version>0.14</version>
         </dependency>
     </dependencies>
+
+    <profiles>
+		<profile>
+			<id>release</id>
+			<distributionManagement>
+			<repository>
+				<id>ossrh</id>
+				<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+			</repository>
+			</distributionManagement>
+			<build>
+			<plugins>
+				<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+					<id>attach-sources</id>
+					<goals>
+						<goal>jar-no-fork</goal>
+					</goals>
+					</execution>
+				</executions>
+				</plugin>
+				<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+					<id>attach-javadocs</id>
+					<goals>
+						<goal>jar</goal>
+					</goals>
+					</execution>
+				</executions>
+				</plugin>
+			</plugins>
+			</build>
+		</profile>
+    </profiles>
 </project>

@@ -8,9 +8,9 @@
     <name>Mass Transit Light for Java</name>
     <url>http://www.npspot.com</url>
     <parent>
-        <groupId>com.sds</groupId>
-        <artifactId>osdr-services</artifactId>
-        <version>0.13</version>
+        <groupId>com.github.arqisoft</groupId>
+        <artifactId>leanda-services</artifactId>
+        <version>0.14</version>
     </parent>
     
     <properties>
@@ -20,8 +20,6 @@
         <nexus.release.url>http://nexus.your-company.com/repository/maven-releases</nexus.release.url>
         <nexus.snapshots.url>http://nexus.your-company.com/repository/maven-snapshots</nexus.snapshots.url>
     </properties>
-
-
 
     <dependencies>
         <dependency>
@@ -41,7 +39,7 @@
         </dependency>
 
 
-            <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
@@ -107,16 +105,58 @@
         </plugins>
 
     </build>
+
     <distributionManagement>
         <repository>
             <id>nexus</id>
-            <url>${nexus.release.url}</url>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
         </repository>
         <snapshotRepository>
             <uniqueVersion>false</uniqueVersion>
             <id>nexus</id>
-            <url>${nexus.snapshots.url}</url>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
+    <profiles>
+		<profile>
+			<id>release</id>
+			<distributionManagement>
+			<repository>
+				<id>ossrh</id>
+				<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+			</repository>
+			</distributionManagement>
+			<build>
+			<plugins>
+				<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+					<id>attach-sources</id>
+					<goals>
+						<goal>jar-no-fork</goal>
+					</goals>
+					</execution>
+				</executions>
+				</plugin>
+				<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+					<id>attach-javadocs</id>
+					<goals>
+						<goal>jar</goal>
+					</goals>
+					</execution>
+				</executions>
+				</plugin>
+			</plugins>
+			</build>
+		</profile>
+    </profiles>
 </project>
