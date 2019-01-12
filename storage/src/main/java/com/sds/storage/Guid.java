@@ -1,6 +1,5 @@
 package com.sds.storage;
 
-import java.util.Arrays;
 import java.util.UUID;
 
 public final class Guid {

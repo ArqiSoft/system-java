@@ -14,7 +14,6 @@ In JTransitLight's initial version, only publishing is supported.
 
 Currently you need to build JTransitLight yourself. No prebuilt version is available for the public.
 
-
 ## Connecting to the service bus
 
 The service bus connection will be an object implementing interface IBusControl.

@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.github.arqisoft</groupId>
-	<artifactId>sds-template-service</artifactId>
-	<name>Sds.Template.Service</name>
+	<artifactId>worker-service-template</artifactId>
+	<name>Leanda Service Template</name>
 	<version>0.14</version>
 
 	<properties>
@@ -15,10 +15,10 @@
 		<build.scm.hash>${env.GIT_COMMIT_SHORT}</build.scm.hash>
 		<build.scm.author>${env.GIT_AUTHOR_NAME}</build.scm.author>
 		<mongodb.databaseName>osdr_dev</mongodb.databaseName>
-		
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<nexus.release.url>http://nexus.your-company.com/repository/maven-releases</nexus.release.url>
+		<nexus.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2</nexus.release.url>
+		<nexus.snapshots.url>https://oss.sonatype.org/content/repositories/snapshots</nexus.snapshots.url>
 	</properties>
 
 	<parent>
@@ -27,7 +27,6 @@
 		<version>2.0.0.RC1</version>
 		<relativePath />
 	</parent>
-
 
 	<dependencies>
 		<dependency>
@@ -42,21 +41,21 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-			</dependency>
+		</dependency>
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
-			<version>3.5.0</version>
+			<version>3.9.1</version>
 		</dependency>
 		<dependency>
-			<groupId>com.npspot</groupId>
+			<groupId>com.github.arqisoft</groupId>
 			<artifactId>jtransit-light</artifactId>
-			<version>1.10.33</version>
+			<version>1.10.35</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.arqisoft</groupId>
 			<artifactId>storage</artifactId>
-			<version>0.14</version>
+			<version>0.16</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.arqisoft</groupId>
@@ -121,7 +120,7 @@
 	<distributionManagement>
 		<repository>
 			<id>nexus</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+			<url>${nexus.release.url}</url>
 		</repository>
 	</distributionManagement>
 
@@ -161,7 +160,7 @@
 			<distributionManagement>
 			<repository>
 				<id>ossrh</id>
-				<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+				<url>${nexus.release.url}</url>
 			</repository>
 			</distributionManagement>
 			<build>

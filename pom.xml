@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.arqisoft</groupId>
-  <artifactId>leanda-services</artifactId>
+  <artifactId>leanda-tools</artifactId>
   <version>0.14</version>
   <packaging>pom</packaging>
-  <name>leanda-services</name>
+  <name>Leanda.io Tools</name>
   <description>Java libraries for Leanda.io OSS project</description>
   <url>https://github.com/ArqiSoft/system-java</url>
 
@@ -34,10 +34,10 @@
   <modules>
     <module>storage</module>
     <module>validation</module>
-    <module>java-service-template</module>
     <module>messaging</module>
     <module>jtransitlight</module>
     <module>office-file-converter</module>
+    <module>worker-service-template</module>
   </modules>
 
   <properties>
@@ -45,19 +45,19 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <nexus.release.url>http://nexus.your-company.com/repository/maven-releases</nexus.release.url>
-    <nexus.snapshots.url>http://nexus.your-company.com/repository/maven-snapshots</nexus.snapshots.url>
+    <nexus.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2</nexus.release.url>
+    <nexus.snapshots.url>https://oss.sonatype.org/content/repositories/snapshots</nexus.snapshots.url>
   </properties>
 
   <distributionManagement>
       <repository>
           <id>nexus</id>
-          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+          <url>${nexus.release.url}</url>
       </repository>
       <snapshotRepository>
           <uniqueVersion>false</uniqueVersion>
           <id>nexus</id>
-          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+          <url>${nexus.snapshots.url}</url>
       </snapshotRepository>
   </distributionManagement>
 
