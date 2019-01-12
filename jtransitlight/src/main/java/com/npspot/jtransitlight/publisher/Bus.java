@@ -33,8 +33,9 @@ public class Bus {
          * @param handshakeTimeoutMs Timeout when establishing connection, milliseconds, use 0 for default
          * @param threadFactory      is for creating threads (EE has managed threads, outside of EE you may use Executors.defaultThreadFactory())
          * @param heartbeatInterval  Interval of sending heartbeat, -1 for no heartbeat
+         * @param contractType       Contract type
          * @return An IBusControl.
-         * @throws JTransitLightTransportException
+         * @throws JTransitLightTransportException if caight inside if cought inside
          */
         public static IBusControl createUsingRabbitMq(String host, String username, String password, int handshakeTimeoutMs, ThreadFactory threadFactory, long heartbeatInterval, ContractType contractType) throws JTransitLightTransportException {
             return createUsingRabbitMq(
@@ -60,8 +61,9 @@ public class Bus {
          * @param handshakeTimeoutMs Timeout when establishing connection, milliseconds, use 0 for default
          * @param threadFactory      is for creating threads (EE has managed threads, outside of EE you may use Executors.defaultThreadFactory())
          * @param heartbeatInterval  Interval of sending heartbeat, -1 for no heartbeat
+         * @param contractType       Contract type
          * @return An IBusControl.
-         * @throws JTransitLightTransportException
+         * @throws JTransitLightTransportException if caight inside
          */
         public static IBusControl createUsingRabbitMq(URI uri, String username, String password, int handshakeTimeoutMs, ThreadFactory threadFactory, long heartbeatInterval, ContractType contractType) throws JTransitLightTransportException {
             return createUsingRabbitMq(
@@ -85,8 +87,9 @@ public class Bus {
          * @param handshakeTimeoutMs Timeout when establishing connection, milliseconds, use 0 for default
          * @param threadFactory      is for creating threads (EE has managed threads, outside of EE you may use Executors.defaultThreadFactory())
          * @param heartbeatInterval  Interval of sending heartbeat, -1 for no heartbeat
+         * @param contractType       Contract type
          * @return An IBusControl.
-         * @throws JTransitLightTransportException
+         * @throws JTransitLightTransportException if caight inside
          */
         public static IBusControl createUsingRabbitMq(URI uri, int handshakeTimeoutMs, ThreadFactory threadFactory, long heartbeatInterval, ContractType contractType) throws JTransitLightTransportException {
             return createUsingRabbitMq(Connection.getInstance(uri, handshakeTimeoutMs), threadFactory, heartbeatInterval, contractType);
@@ -102,8 +105,9 @@ public class Bus {
          *
          * @param uri                URI for RabbitMQ.
          * @param handshakeTimeoutMs Timeout when establishing connection, milliseconds, use 0 for default
+         * @param contractType       Contract type
          * @return An IBusControl.
-         * @throws JTransitLightTransportException
+         * @throws JTransitLightTransportException if caight inside
          */
         public static IBusControl createUsingRabbitMq(URI uri, int handshakeTimeoutMs, ContractType contractType) throws JTransitLightTransportException {
             SequenceProvider sequenceProvider = Utility.getSequenceProvider(contractType);
@@ -124,7 +128,8 @@ public class Bus {
          * The control is set up to use:<br>
          * - In memory message storage for testing.
          *
-         * @return An IBusControl.
+         * @param contractType       Contract type
+         * @return                   An IBusControl.
          */
         public static IBusControl createUsingInMemory(ContractType contractType) {
             Connection connection = Connection.getInstance();

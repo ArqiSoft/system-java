@@ -18,12 +18,6 @@ public interface Contract {
 
     String getQueueName();
 
-    /**
-     * All messages must have sequence numbers, per contract, receiving end may use this to handle out-of-order messages.
-     * You can use ContractMapping class to keep your sequences in memory.
-     * If you don't care about order of messages and send small amounts then you could
-     * hardcode MessageSequence to 1 - it will work though
-     */
     Long getMessageSequence();
 
     void setMessageSequence(Long sequence);
