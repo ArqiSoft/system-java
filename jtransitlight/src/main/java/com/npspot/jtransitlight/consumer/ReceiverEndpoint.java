@@ -27,8 +27,8 @@ public interface ReceiverEndpoint {
      * @param queueName    The queue to bind to this exchange
      * @param isDurable    Queue configuration parameter
      * @param callback     The callback interface to be called when a message is received
-     * @throws com.npspot.jtransitlight.JTransitLightException
-     * @throws java.io.IOException
+     * @throws com.npspot.jtransitlight.JTransitLightException if cought inside
+     * @throws java.io.IOException if cought inside
      * @deprecated since {@link ConsumerSettings} appeared
      */
     @Deprecated
@@ -41,8 +41,8 @@ public interface ReceiverEndpoint {
      * @param queueName    The queue to bind to this exchange
      * @param settings     Configured consumer settings
      * @param callback     The callback interface to be called when a message is received
-     * @throws com.npspot.jtransitlight.JTransitLightException
-     * @throws java.io.IOException
+     * @throws com.npspot.jtransitlight.JTransitLightException if cought inside
+     * @throws java.io.IOException if cought inside
      */
     void subscribe(String exchangeName, String queueName, ConsumerSettings settings, MessageCallback callback) throws JTransitLightException, IOException;
 
@@ -53,8 +53,8 @@ public interface ReceiverEndpoint {
      * @param queueName     The queue to bind to this exchange
      * @param isDurable     Queue configuration parameter
      * @param callback      The callback interface to be called when a message is received
-     * @throws com.npspot.jtransitlight.JTransitLightException
-     * @throws java.io.IOException
+     * @throws com.npspot.jtransitlight.JTransitLightException if cought inside
+     * @throws java.io.IOException if cought inside
      * @deprecated since {@link ConsumerSettings} appeared
      */
     @Deprecated
@@ -67,8 +67,8 @@ public interface ReceiverEndpoint {
      * @param queueName     The queue to bind to this exchange
      * @param settings      Configured consumer settings
      * @param callback      The callback interface to be called when a message is received
-     * @throws com.npspot.jtransitlight.JTransitLightException
-     * @throws java.io.IOException
+     * @throws com.npspot.jtransitlight.JTransitLightException if cought inside
+     * @throws java.io.IOException if cought inside
      */
     void subscribe(List<String> exchangeNames, String queueName, ConsumerSettings settings, MessageCallback callback) throws JTransitLightException, IOException;
 
@@ -78,32 +78,24 @@ public interface ReceiverEndpoint {
      * @param restURL            Rest URL to fetch snapshot
      * @param restReSyncInterval ReSync interval
      * @param messageCallback    The callback interface to be called when a message is received
+     * @throws com.npspot.jtransitlight.JTransitLightException if cought inside
      */
     void subscribeRefData(String restURL, long restReSyncInterval, SnapshotDeltaCallback messageCallback) throws JTransitLightException;
 
-    /**
-     * Subscribe to and start receiving messages for this contract with initial snapshot fetched from REST endpoint
-     *
-     * @param exchangeName Exchange names
-     * @param queueName    The queue to bind to this exchange
-     * @param isDurable    Queue configuration parameter
-     * @param callback     The callback interface to be called when a message is received
-     * @throws com.npspot.jtransitlight.JTransitLightException
-     * @throws java.io.IOException
-     * @deprecated since {@link ConsumerSettings} appeared
-     */
     @Deprecated
     void subscribeRefData(String exchangeName, String queueName, boolean isDurable, String restURL, boolean isHandleReSync, SnapshotDeltaCallback callback) throws JTransitLightException, IOException, MessageProcessingException;
 
     /**
      * Subscribe to and start receiving messages for this contract with initial snapshot fetched from REST endpoint
      *
-     * @param exchangeName Exchange names
-     * @param queueName    The queue to bind to this exchange
-     * @param settings     Configured consumer settings
-     * @param callback     The callback interface to be called when a message is received
-     * @throws com.npspot.jtransitlight.JTransitLightException
-     * @throws java.io.IOException
+     * @param exchangeName   Exchange names
+     * @param queueName      The queue to bind to this exchange
+     * @param settings       Configured consumer settings
+     * @param restURL        URL
+     * @param isHandleReSync Handles re-sync
+     * @param callback       The callback interface to be called when a message is received
+     * @throws com.npspot.jtransitlight.JTransitLightException if cought inside
+     * @throws java.io.IOException if cought inside
      */
     void subscribeRefData(String exchangeName, String queueName, ConsumerSettings settings, String restURL, boolean isHandleReSync, SnapshotDeltaCallback callback) throws JTransitLightException, IOException, MessageProcessingException;
 
@@ -123,8 +115,8 @@ public interface ReceiverEndpoint {
      * @param queueName    The queue to bind to this exchange
      * @param isDurable    Queue configuration parameter
      * @param callback     The callback interface to be called when a message is received
-     * @throws com.npspot.jtransitlight.JTransitLightException
-     * @throws java.io.IOException
+     * @throws com.npspot.jtransitlight.JTransitLightException if cought inside
+     * @throws java.io.IOException if cought inside
      * @deprecated since {@link ConsumerSettings} appeared
      */
     @Deprecated
@@ -137,8 +129,8 @@ public interface ReceiverEndpoint {
      * @param queueName    The queue to bind to this exchange
      * @param settings     Configured consumer settings
      * @param callback     The callback interface to be called when a message is received
-     * @throws com.npspot.jtransitlight.JTransitLightException
-     * @throws java.io.IOException
+     * @throws com.npspot.jtransitlight.JTransitLightException if cought inside
+     * @throws java.io.IOException if cought inside
      */
     void subscribeTrxData(String exchangeName, String queueName, ConsumerSettings settings, String restURL, long startTimeUTC, long endTimeUTC, boolean isHandleReSync, SnapshotDeltaCallback callback) throws JTransitLightException, IOException, MessageProcessingException;
 
@@ -154,7 +146,7 @@ public interface ReceiverEndpoint {
      *
      * @param exchangeNames
      * @param queueName
-     * @throws java.io.IOException
+     * @throws java.io.IOException if cought inside
      */
     void unSubscribe(List<String> exchangeNames, String queueName) throws IOException;
 
@@ -163,7 +155,7 @@ public interface ReceiverEndpoint {
      *
      * @param exchangeName
      * @param queueName
-     * @throws java.io.IOException
+     * @throws java.io.IOException if cought inside
      */
     void unSubscribe(String exchangeName, String queueName) throws IOException;
 

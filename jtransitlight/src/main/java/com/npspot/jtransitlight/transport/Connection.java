@@ -335,7 +335,7 @@ public class Connection {
      * Set or reset waiting for acknowledgement when publishing messages.
      *
      * @param waitForAcknowledgement
-     * @throws JTransitLightTransportException
+     * @throws JTransitLightTransportException if disposed
      */
     public void setWaitForAcknowledgement(boolean waitForAcknowledgement) throws JTransitLightTransportException {
         if (disposed)
@@ -347,8 +347,8 @@ public class Connection {
     /**
      * Set the Publish message acknowledgement timeout in milliseconds.
      *
-     * @param acknowledgementTimeout
-     * @throws JTransitLightTransportException
+     * @param acknowledgementTimeout Timeout for the aks
+     * @throws JTransitLightTransportException if disposed
      */
     public void setAcknowledgementTimeout(long acknowledgementTimeout) throws JTransitLightTransportException {
         if (disposed)

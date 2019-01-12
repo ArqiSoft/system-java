@@ -31,27 +31,9 @@ public interface BlobStorage {
     Guid addFile(String fileName, byte[] source, String contentType, 
             String bucketName, Map<String, Object> metadata);
 
-    /**
-     * Replaces existing file in storage
-     * @param fileName File name
-     * @param source Source stream
-     * @param contentType MIME type
-     * @param bucketName Bucket name where file stored
-     * @param metadata Metadata assigned to saved file
-     * @return GUID assigned to file in storage
-     */
     void addFile(Guid id, String fileName, InputStream source, String contentType, 
             String bucketName, Map<String, Object> metadata);
 
-    /**
-     * Replaces existing file in storage
-     * @param fileName File name
-     * @param source File content
-     * @param contentType MIME type
-     * @param bucketName Bucket name where file is stored
-     * @param metadata Metadata assigned to saved file
-     * @return GUID assigned to file in storage
-     */
     void addFile(Guid id, String fileName, byte[] source, String contentType, 
             String bucketName, Map<String, Object> metadata);
     

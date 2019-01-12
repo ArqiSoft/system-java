@@ -38,7 +38,7 @@ public class Receiver {
          * @param heartbeatInterval Interval of sending heartbeat, -1 for no
          * heartbeat
          * @return	An IBusControl.
-         * @throws JTransitLightTransportException
+         * @throws JTransitLightTransportException if cought inside
          */
         public static ReceiverBusControl createUsingRabbitMq(String host, String username, String password, int handshakeTimeoutMs, ThreadFactory threadFactory, long heartbeatInterval) throws JTransitLightTransportException {
             return createUsingRabbitMq(
@@ -67,7 +67,7 @@ public class Receiver {
          * @param heartbeatInterval Interval of sending heartbeat, -1 for no
          * heartbeat
          * @return	An IBusControl.
-         * @throws JTransitLightTransportException
+         * @throws JTransitLightTransportException if cought inside
          */
         public static ReceiverBusControl createUsingRabbitMq(URI uri, String username, String password, int handshakeTimeoutMs, ThreadFactory threadFactory, long heartbeatInterval) throws JTransitLightTransportException {
             return createUsingRabbitMq(
@@ -111,7 +111,7 @@ public class Receiver {
          * @param handshakeTimeoutMs Timeout when establishing connection,
          * milliseconds, use 0 for default
          * @return	An IBusControl.
-         * @throws JTransitLightTransportException
+         * @throws JTransitLightTransportException if cought inside
          */
         public static ReceiverBusControl createUsingRabbitMq(URI uri, int handshakeTimeoutMs) throws JTransitLightTransportException {
             ReceiverBusControl busControl = new ReceiverBusControlImpl(Connection.getInstance(uri, handshakeTimeoutMs));

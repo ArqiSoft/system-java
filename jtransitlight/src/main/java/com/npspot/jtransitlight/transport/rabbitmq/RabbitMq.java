@@ -55,7 +55,7 @@ public class RabbitMq {
      * @param username           User-name for RabbitMQ access.
      * @param password           Password for RabbitMq access.
      * @param handshakeTimeoutMs Timeout when establishing connection, pass 0 to use default.
-     * @throws JTransitLightTransportException
+     * @throws JTransitLightTransportException if caught one of IOException | TimeoutException | KeyManagementException | NoSuchAlgorithmException | URISyntaxException
      */
     public RabbitMq(URI uri, String host, String username, String password, int handshakeTimeoutMs) throws JTransitLightTransportException {
         try {
@@ -106,7 +106,7 @@ public class RabbitMq {
      * Publish a message (byte array) to the given exchange.
      *
      * @param context rabbit mq message info
-     * @throws JTransitLightTransportException
+     * @throws JTransitLightTransportException if IOException is cought
      */
     public void publish(RabbitMQMessageContext context) throws JTransitLightTransportException {
         try {
