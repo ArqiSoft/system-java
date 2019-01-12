@@ -9,6 +9,7 @@
     
     <groupId>com.github.arqisoft</groupId>
     <artifactId>messaging</artifactId>
+    <name>Messaging</name>
     <version>1.1</version>
     <packaging>jar</packaging>
 

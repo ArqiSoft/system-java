@@ -12,6 +12,7 @@
 
     <groupId>com.github.arqisoft</groupId>
     <artifactId>office-file-converter</artifactId>
+    <name>Office File Converter</name>
     <version>0.14</version>
 
     <properties>
@@ -19,7 +20,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<nexus.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2</nexus.release.url>
     </properties>
-
 
     <dependencies>
         <dependency>

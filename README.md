@@ -2,6 +2,8 @@
 
 ## Build in Docker
 
+Builds all modules except `worker-service-template` inside docker container
+
 ```terminal
 docker build .
 ```
